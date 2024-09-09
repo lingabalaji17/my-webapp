@@ -1,0 +1,11 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Building the website..."
+      - aws s3 sync . s3://my-website-bucket --delete
+
+artifacts:
+  files:
+    - '**/*'
